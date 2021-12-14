@@ -1,5 +1,8 @@
 <?php
 
+// Пример применения композиции вместо сложной иерархии наследования от базового класса
+// Вычисление стоимости для занятий объектов класса Lesson осуществляется в объектах класса CostStrategy
+// В классах Notifier и RegistrationMgr реализуется отправка уведомлений о состоянии объектов класса Lesson
 abstract class Lesson
 {
     private $duration;
@@ -70,14 +73,14 @@ class FixedCostStrategy extends CostStrategy
     }
 }
 
-/*$lessons[] = new Seminar(4, new TimedCostStrategy());
+$lessons[] = new Seminar(4, new TimedCostStrategy());
 $lessons[] = new Lecture(4, new FixedCostStrategy());
 
 foreach ($lessons as $lesson) {
     print "<p>Продолжительность занятия = {$lesson->getDuration()}. ";
     print "Оплата за занятие = {$lesson->cost()}. ";
     print "Тип оплаты: {$lesson->chargeType()}.</p>";
-}*/
+}
 
 class RegistrationMgr
 {

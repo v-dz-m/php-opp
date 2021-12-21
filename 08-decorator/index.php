@@ -1,5 +1,7 @@
 <?php
 
+// Шаблон предназначен для динамического подключения дополнительного поведения к объекту.
+// Предоставляет гибкую альтернативу практике создания подклассов с целью расширения функциональности.
 abstract class Tile
 {
     abstract public function getWealthFactor(): int;
@@ -45,4 +47,4 @@ $tile1 = new Plains();
 $tile2 = new DiamondDecorator(new Plains());
 $tile3 = new PollutionDecorator(new Plains());
 
-print_r([$tile1->getWealthFactor(), $tile2->getWealthFactor(), $tile3->getWealthFactor()]);
+var_dump([$tile1, $tile2, $tile3]);
